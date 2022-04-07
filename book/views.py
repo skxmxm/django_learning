@@ -1,8 +1,13 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+context = {
+    'book1': {
+        'name': "三国演义",
+        'person': '诸葛亮',
+    }
+}
 
 
 def index(request):
-    return HttpResponse("OK")
+    return render(request, "book/index.html", context)
